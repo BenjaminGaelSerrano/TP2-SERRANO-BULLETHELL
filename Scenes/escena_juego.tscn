@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dlx5qljqbkbhn"]
+
+[ext_resource type="Texture2D" uid="uid://dmwffvyktkuqp" path="res://Images/FondoFuturista.png" id="1_xv6uw"]
+[ext_resource type="Script" uid="uid://cevssdmnnw25j" path="res://fondo_1_desplazante.gd" id="2_vqevi"]
+[ext_resource type="Script" uid="uid://ch5dqko3jyb4u" path="res://fondo_2_desplazante.gd" id="3_45664"]
+
+[node name="EscenaJuego" type="Node2D" unique_id=1873321606]
+
+[node name="Fondo1Desplazante" type="TextureRect" parent="." unique_id=1234096173]
+offset_right = 2816.0
+offset_bottom = 1536.0
+texture = ExtResource("1_xv6uw")
+script = ExtResource("2_vqevi")
+
+[node name="Fondo2Desplazante" type="TextureRect" parent="." unique_id=1205570677]
+offset_left = 2816.0
+offset_top = 3075.0
+offset_right = 5632.0
+offset_bottom = 4611.0
+rotation = 3.1415927
+texture = ExtResource("1_xv6uw")
+flip_h = true
+script = ExtResource("3_45664")
