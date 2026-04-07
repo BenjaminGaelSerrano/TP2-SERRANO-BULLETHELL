@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmwffvyktkuqp"
-path="res://.godot/imported/FondoFuturista.png-f105e795e1b27bd1e18b68b55bdcd09f.ctex"
+uid="uid://c223uyw6syehi"
+path="res://.godot/imported/espacioExterior.png-173ab1907e9cea7d8a995f5dbb754bfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/FondoFuturista.png"
-dest_files=["res://.godot/imported/FondoFuturista.png-f105e795e1b27bd1e18b68b55bdcd09f.ctex"]
+source_file="res://Assets/Backgrounds/espacioExterior.png"
+dest_files=["res://.godot/imported/espacioExterior.png-173ab1907e9cea7d8a995f5dbb754bfd.ctex"]
 
 [params]
 
