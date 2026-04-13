@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bh5err58vm2mn"]
+
+[ext_resource type="Texture2D" uid="uid://cqh0ophy4s7d8" path="res://Assets/Sprites/meteorito.png" id="1_8pmw3"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/asteroideRoto.png" id="2_7thuf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n074k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8pmw3")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7thuf")
+}],
+"loop": true,
+"name": &"Roto",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qklm2"]
+radius = 34.058773
+
+[node name="Meteorito" type="Area2D" unique_id=1096180996]
+position = Vector2(175, 0)
+
+[node name="AnimacionMeteorito" type="AnimatedSprite2D" parent="." unique_id=2047874347]
+scale = Vector2(0.203125, 0.15401787)
+sprite_frames = SubResource("SpriteFrames_n074k")
+animation = &"Normal"
+frame_progress = 0.08678791
+
+[node name="FormaMeteorito" type="CollisionShape2D" parent="." unique_id=1756769863]
+shape = SubResource("CircleShape2D_qklm2")
