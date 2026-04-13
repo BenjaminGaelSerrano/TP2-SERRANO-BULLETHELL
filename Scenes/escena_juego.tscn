@@ -5,6 +5,65 @@
 [ext_resource type="Texture2D" uid="uid://u237apbdspi7" path="res://Assets/Backgrounds/anillo.png" id="2_xv6uw"]
 [ext_resource type="Texture2D" uid="uid://cg2tmljx0xwgw" path="res://Assets/Backgrounds/planetasLejanos.png" id="5_bpiil"]
 [ext_resource type="Texture2D" uid="uid://dln0dmadcqjgi" path="res://Assets/Backgrounds/estrellas.png" id="6_0ts43"]
+[ext_resource type="Texture2D" uid="uid://ddd8850sxv2qk" path="res://Assets/Sprites/NaveAdelante.png" id="6_5a5o0"]
+[ext_resource type="Script" uid="uid://dw3f005b4gowk" path="res://Scenes/jugador.gd" id="6_ewo5w"]
+[ext_resource type="Texture2D" uid="uid://bg1prmdice83v" path="res://Assets/Sprites/NaveIzquierda.png" id="7_by3p8"]
+[ext_resource type="Texture2D" uid="uid://c6ixkj6jkl8vv" path="res://Assets/Sprites/NaveDerecha.png" id="8_ewo5w"]
+[ext_resource type="Texture2D" uid="uid://b24sxlcxsy5jx" path="res://Assets/Sprites/DañoEnLaNave.png" id="9_dwp16"]
+[ext_resource type="Texture2D" uid="uid://bujyep3anpkow" path="res://Assets/Sprites/MuerteNave.png" id="10_k4n53"]
+[ext_resource type="Texture2D" uid="uid://dmspjmchadao7" path="res://Assets/Sprites/DesapariciónNave.png" id="11_yg5m4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y110i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5a5o0")
+}],
+"loop": true,
+"name": &"Adelante",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_dwp16")
+}],
+"loop": true,
+"name": &"Daño",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ewo5w")
+}],
+"loop": true,
+"name": &"Derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_by3p8")
+}],
+"loop": true,
+"name": &"Izquierda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_k4n53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yg5m4")
+}],
+"loop": true,
+"name": &"Muerte",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a5o0"]
+size = Vector2(224, 185)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_by3p8"]
+size = Vector2(135, 83)
 
 [node name="EscenaJuego" type="Node2D" unique_id=1873321606]
 
@@ -55,3 +114,23 @@ texture = ExtResource("6_0ts43")
 position = Vector2(1127, 639.5)
 scale = Vector2(4.5441175, 3.8562503)
 texture = ExtResource("6_0ts43")
+
+[node name="Jugador" type="CharacterBody2D" parent="." unique_id=1498384069]
+position = Vector2(958, 927)
+script = ExtResource("6_ewo5w")
+
+[node name="AnimaciónJugador" type="AnimatedSprite2D" parent="Jugador" unique_id=309199361]
+rotation = -1.5707964
+scale = Vector2(2.7348301, 3.6241887)
+sprite_frames = SubResource("SpriteFrames_y110i")
+animation = &"Adelante"
+
+[node name="FormaJugador" type="CollisionShape2D" parent="Jugador" unique_id=1680116633]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_5a5o0")
+
+[node name="Hitbox" type="Area2D" parent="Jugador" unique_id=903936744]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Jugador/Hitbox" unique_id=1046394906]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_by3p8")

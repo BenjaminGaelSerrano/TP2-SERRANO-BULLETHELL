@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bafmie8fjpw5f"]
+
+[ext_resource type="Texture2D" uid="uid://djvgbw06yy8mx" path="res://Assets/Sprites/Bala.png" id="1_4qq6s"]
+[ext_resource type="Script" uid="uid://vl82mpwybc0" path="res://Scenes/bala.gd" id="1_melus"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4n53"]
+size = Vector2(3.5666676, 1.500001)
+
+[node name="Bala" type="Area2D" unique_id=1737718116]
+position = Vector2(959.00006, 821)
+rotation = 4.712389
+scale = Vector2(30, 30)
+script = ExtResource("1_melus")
+
+[node name="BalaAsset" type="Sprite2D" parent="." unique_id=1798370435]
+position = Vector2(-2.813167, 0.09301138)
+scale = Vector2(0.007447697, 0.008370247)
+texture = ExtResource("1_4qq6s")
+
+[node name="FormaBala" type="CollisionShape2D" parent="." unique_id=241711041]
+position = Vector2(-2.8833332, 0.016666412)
+shape = SubResource("RectangleShape2D_k4n53")
