@@ -125,6 +125,18 @@ scale = Vector2(2.7348301, 3.6241887)
 sprite_frames = SubResource("SpriteFrames_y110i")
 animation = &"Adelante"
 
+[node name="Centro" type="Marker2D" parent="Jugador/AnimaciónJugador" unique_id=1663901035]
+unique_name_in_owner = true
+position = Vector2(46.437984, 0.8277302)
+
+[node name="Izquierda" type="Marker2D" parent="Jugador/AnimaciónJugador" unique_id=165839691]
+unique_name_in_owner = true
+position = Vector2(-12.06636, -28.171967)
+
+[node name="Derecha" type="Marker2D" parent="Jugador/AnimaciónJugador" unique_id=1462606630]
+unique_name_in_owner = true
+position = Vector2(-12.066, 28.172)
+
 [node name="FormaJugador" type="CollisionShape2D" parent="Jugador" unique_id=1680116633]
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_5a5o0")

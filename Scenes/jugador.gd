@@ -25,6 +25,11 @@ func _physics_process(delta):
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Disparar"):
 		var bala= Bala.instantiate()
-		bala.position= position
+		if direccion == -1:
+			bala.position= %Izquierda.global_position
+		elif direccion == 1:
+			bala.position= %Derecha.global_position
+		else:
+			bala.position= %Centro.global_position
 		bala.direccionX= direccion
 		get_parent().add_child(bala)		

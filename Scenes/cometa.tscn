@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c1jb8cevyngkp"]
+
+[ext_resource type="Texture2D" uid="uid://8pf7ee44oeno" path="res://Assets/Sprites/cometa.png" id="1_s1y74"]
+[ext_resource type="Texture2D" uid="uid://bxpbxdhg6m2fr" path="res://Assets/Sprites/explosionCometa.png" id="2_ej4ak"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_by3p8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s1y74")
+}],
+"loop": true,
+"name": &"Cometa Normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ej4ak")
+}],
+"loop": true,
+"name": &"Destruccion",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ewo5w"]
+radius = 212.28519
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dwp16"]
+radius = 90.02222
+
+[node name="Cometa" type="CharacterBody2D" unique_id=1746243944]
+
+[node name="AnimacionCometa" type="AnimatedSprite2D" parent="." unique_id=764631845]
+sprite_frames = SubResource("SpriteFrames_by3p8")
+animation = &"Cometa Normal"
+
+[node name="FormaCometa" type="CollisionShape2D" parent="." unique_id=680145464]
+shape = SubResource("CircleShape2D_ewo5w")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1913136223]
+position = Vector2(-6, 0)
+
+[node name="Hitbox" type="CollisionShape2D" parent="Hitbox" unique_id=22816032]
+position = Vector2(-37, 43)
+shape = SubResource("CircleShape2D_dwp16")
