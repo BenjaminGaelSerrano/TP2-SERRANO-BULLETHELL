@@ -1,5 +1,6 @@
-[gd_scene format=3 uid="uid://c1jb8cevyngkp"]
+[gd_scene format=3 uid="uid://cpm7rwacg77xd"]
 
+[ext_resource type="Script" uid="uid://dc7qotdptpko3" path="res://Scenes/cometa.gd" id="1_ej4ak"]
 [ext_resource type="Texture2D" uid="uid://8pf7ee44oeno" path="res://Assets/Sprites/cometa.png" id="1_s1y74"]
 [ext_resource type="Texture2D" uid="uid://bxpbxdhg6m2fr" path="res://Assets/Sprites/explosionCometa.png" id="2_ej4ak"]
 
@@ -29,6 +30,7 @@ radius = 212.28519
 radius = 90.02222
 
 [node name="Cometa" type="CharacterBody2D" unique_id=1746243944]
+script = ExtResource("1_ej4ak")
 
 [node name="AnimacionCometa" type="AnimatedSprite2D" parent="." unique_id=764631845]
 sprite_frames = SubResource("SpriteFrames_by3p8")

@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://bh5err58vm2mn"]
+[gd_scene format=3 uid="uid://c7yuonmq4l5ar"]
 
+[ext_resource type="Script" uid="uid://wrdvdwd6he7m" path="res://Scenes/meteorito.gd" id="1_7thuf"]
 [ext_resource type="Texture2D" uid="uid://cqh0ophy4s7d8" path="res://Assets/Sprites/meteorito.png" id="1_8pmw3"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/asteroideRoto.png" id="2_7thuf"]
+[ext_resource type="Texture2D" uid="uid://d12if72qxdwnn" path="res://Assets/Sprites/MeteoritoRoto.png" id="3_n074k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n074k"]
 animations = [{
@@ -15,7 +16,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7thuf")
+"texture": ExtResource("3_n074k")
 }],
 "loop": true,
 "name": &"Roto",
@@ -27,12 +28,12 @@ radius = 34.058773
 
 [node name="Meteorito" type="Area2D" unique_id=1096180996]
 position = Vector2(175, 0)
+script = ExtResource("1_7thuf")
 
 [node name="AnimacionMeteorito" type="AnimatedSprite2D" parent="." unique_id=2047874347]
 scale = Vector2(0.203125, 0.15401787)
 sprite_frames = SubResource("SpriteFrames_n074k")
-animation = &"Normal"
-frame_progress = 0.08678791
+animation = &"Roto"
 
 [node name="FormaMeteorito" type="CollisionShape2D" parent="." unique_id=1756769863]
 shape = SubResource("CircleShape2D_qklm2")
