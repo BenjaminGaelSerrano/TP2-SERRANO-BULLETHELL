@@ -1,5 +1,7 @@
 extends CharacterBody2D
 const velocidad = 400
+var vidas=3
+var meteoritos_destruidos=0
 const Bala= preload("res://Scenes/bala.tscn")
 @onready var animacion = $"AnimaciónJugador"
 var anchoPantalla
@@ -21,7 +23,7 @@ func _physics_process(delta):
 	elif direccion == 1:
 		animacion.play("Derecha")
 	else:
-		animacion.play("Adelante")
+		animacion.play("Adelante")	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Disparar"):
 		var bala= Bala.instantiate()
@@ -33,3 +35,12 @@ func _input(event: InputEvent) -> void:
 			bala.position= %Centro.global_position
 		bala.direccionX= direccion
 		get_parent().add_child(bala)		
+func recibir_danio():
+	vidas-=1
+	if(vidas<=0):
+		queue_free()
+		animacion.play("Muerte")
+func _on_body_entered(body):
+	if body.name== "jugador" :
+		body.recibir_danio()
+				

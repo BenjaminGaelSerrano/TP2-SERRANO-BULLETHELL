@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c7yuonmq4l5ar"]
+[gd_scene format=3 uid="uid://bh5err58vm2mn"]
 
 [ext_resource type="Script" uid="uid://wrdvdwd6he7m" path="res://Scenes/meteorito.gd" id="1_7thuf"]
 [ext_resource type="Texture2D" uid="uid://cqh0ophy4s7d8" path="res://Assets/Sprites/meteorito.png" id="1_8pmw3"]

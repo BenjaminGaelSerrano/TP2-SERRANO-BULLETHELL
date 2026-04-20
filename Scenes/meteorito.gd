@@ -15,6 +15,10 @@ func destruir():
 	await animacion.animation_finished
 	queue_free()		
 func _on_body_entered(body):
+	if body.name== "jugador" :
+		body.recibir_danio()
 	destruir()
 func _on_area_entered(area):
-	destruir()	
+	if area.name== "bala" :
+		area._on_area_entered()
+	destruir()

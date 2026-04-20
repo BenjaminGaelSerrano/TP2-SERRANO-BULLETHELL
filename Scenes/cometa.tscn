@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cpm7rwacg77xd"]
+[gd_scene format=3 uid="uid://c1jb8cevyngkp"]
 
-[ext_resource type="Script" uid="uid://dc7qotdptpko3" path="res://Scenes/cometa.gd" id="1_ej4ak"]
+[ext_resource type="Script" path="res://Scenes/cometa.gd" id="1_ej4ak"]
 [ext_resource type="Texture2D" uid="uid://8pf7ee44oeno" path="res://Assets/Sprites/cometa.png" id="1_s1y74"]
 [ext_resource type="Texture2D" uid="uid://bxpbxdhg6m2fr" path="res://Assets/Sprites/explosionCometa.png" id="2_ej4ak"]
 
