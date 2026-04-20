@@ -2,6 +2,7 @@ extends CharacterBody2D
 const velocidad = 400
 var vidas=3
 var meteoritos_destruidos=0
+signal vidaPerdida
 const Bala= preload("res://Scenes/bala.tscn")
 @onready var animacion = $"AnimaciónJugador"
 var anchoPantalla
@@ -37,6 +38,8 @@ func _input(event: InputEvent) -> void:
 		get_parent().add_child(bala)		
 func recibir_danio():
 	vidas-=1
+	vidaPerdida.emit()
+	get_node("")
 	if(vidas<=0):
 		queue_free()
 		animacion.play("Muerte")

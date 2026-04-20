@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://lcrrs4pu5vsw"]
+
+[ext_resource type="Script" uid="uid://coh2mq5nfttn7" path="res://barra_vida.gd" id="1_5wd0n"]
+[ext_resource type="Texture2D" uid="uid://cultfimsbiof0" path="res://Assets/Sprites/vidas.png" id="2_cqh2r"]
+
+[node name="BarraVida" type="HBoxContainer" unique_id=917212491]
+offset_right = 685.0
+offset_bottom = 225.0
+theme_override_constants/separation = 1
+script = ExtResource("1_5wd0n")
+
+[node name="Vida1" type="TextureRect" parent="." unique_id=523563143]
+layout_mode = 2
+texture = ExtResource("2_cqh2r")
+
+[node name="Vida2" type="TextureRect" parent="." unique_id=897518833]
+layout_mode = 2
+texture = ExtResource("2_cqh2r")
+
+[node name="Vida3" type="TextureRect" parent="." unique_id=269506353]
+layout_mode = 2
+texture = ExtResource("2_cqh2r")
