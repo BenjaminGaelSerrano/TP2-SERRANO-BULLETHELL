@@ -39,11 +39,7 @@ func _input(event: InputEvent) -> void:
 func recibir_danio():
 	vidas-=1
 	vidaPerdida.emit()
-	get_node("")
 	if(vidas<=0):
-		queue_free()
 		animacion.play("Muerte")
-func _on_body_entered(body):
-	if body.name== "jugador" :
-		body.recibir_danio()
+		queue_free()
 				

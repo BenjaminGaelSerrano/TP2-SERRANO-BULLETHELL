@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bujyep3anpkow" path="res://Assets/Sprites/MuerteNave.png" id="10_k4n53"]
 [ext_resource type="Texture2D" uid="uid://dmspjmchadao7" path="res://Assets/Sprites/DesapariciónNave.png" id="11_yg5m4"]
 [ext_resource type="PackedScene" uid="uid://lcrrs4pu5vsw" path="res://Scenes/barra_vida.tscn" id="13_ewo5w"]
+[ext_resource type="PackedScene" uid="uid://c1jb8cevyngkp" path="res://Scenes/cometa.tscn" id="14_yg5m4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y110i"]
 animations = [{
@@ -147,6 +148,8 @@ shape = SubResource("RectangleShape2D_5a5o0")
 [node name="Hitbox" type="CollisionShape2D" parent="Jugador/Hitbox" unique_id=1046394906]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_by3p8")
+
+[node name="Cometa" parent="." unique_id=1746243944 instance=ExtResource("14_yg5m4")]
 
 [node name="BarraVida" parent="." unique_id=917212491 instance=ExtResource("13_ewo5w")]
 offset_left = 1226.0

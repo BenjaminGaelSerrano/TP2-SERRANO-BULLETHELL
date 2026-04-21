@@ -19,6 +19,4 @@ func _on_body_entered(body):
 		body.recibir_danio()
 	destruir()
 func _on_area_entered(area):
-	if area.name== "bala" :
-		area._on_area_entered()
 	destruir()
