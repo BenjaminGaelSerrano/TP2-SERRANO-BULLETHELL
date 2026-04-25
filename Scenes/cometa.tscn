@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c1jb8cevyngkp"]
+[gd_scene format=3 uid="uid://cpm7rwacg77xd"]
 
 [ext_resource type="Script" uid="uid://dc7qotdptpko3" path="res://Scenes/cometa.gd" id="1_ej4ak"]
 [ext_resource type="Texture2D" uid="uid://8pf7ee44oeno" path="res://Assets/Sprites/cometa.png" id="1_s1y74"]
@@ -18,7 +18,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_ej4ak")
 }],
-"loop": true,
+"loop": false,
 "name": &"Destruccion",
 "speed": 5.0
 }]
@@ -30,18 +30,28 @@ radius = 212.28519
 radius = 90.02222
 
 [node name="Cometa" type="CharacterBody2D" unique_id=1746243944]
+process_mode = 3
 script = ExtResource("1_ej4ak")
 
 [node name="AnimacionCometa" type="AnimatedSprite2D" parent="." unique_id=764631845]
 sprite_frames = SubResource("SpriteFrames_by3p8")
-animation = &"Cometa Normal"
+animation = &"Destruccion"
 
 [node name="FormaCometa" type="CollisionShape2D" parent="." unique_id=680145464]
 shape = SubResource("CircleShape2D_ewo5w")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1913136223]
 position = Vector2(-6, 0)
+collision_layer = 2
+collision_mask = 4
 
 [node name="Hitbox" type="CollisionShape2D" parent="Hitbox" unique_id=22816032]
 position = Vector2(-37, 43)
 shape = SubResource("CircleShape2D_dwp16")
+
+[node name="TimerDisparo" type="Timer" parent="." unique_id=1507237920]
+wait_time = 0.4
+autostart = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="TimerDisparo" to="." method="_on_timer_disparo_timeout"]

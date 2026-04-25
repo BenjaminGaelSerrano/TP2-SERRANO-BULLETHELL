@@ -9,6 +9,8 @@ size = Vector2(3.5666676, 1.4500005)
 [node name="Bala" type="Area2D" unique_id=1737718116]
 rotation = 4.712389
 scale = Vector2(30, 30)
+collision_layer = 4
+collision_mask = 10
 script = ExtResource("1_melus")
 
 [node name="BalaAsset" type="Sprite2D" parent="." unique_id=1798370435]
@@ -19,3 +21,6 @@ texture = ExtResource("1_4qq6s")
 [node name="FormaBala" type="CollisionShape2D" parent="." unique_id=241711041]
 position = Vector2(-0.06666668, -0.06666667)
 shape = SubResource("RectangleShape2D_k4n53")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

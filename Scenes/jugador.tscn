@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dy2u8q4fnai0a"]
+
+[ext_resource type="Script" uid="uid://dw3f005b4gowk" path="res://Scenes/jugador.gd" id="1_5nsjc"]
+[ext_resource type="Texture2D" uid="uid://ddd8850sxv2qk" path="res://Assets/Sprites/NaveAdelante.png" id="2_6vc6x"]
+[ext_resource type="Texture2D" uid="uid://b24sxlcxsy5jx" path="res://Assets/Sprites/DañoEnLaNave.png" id="3_3cdix"]
+[ext_resource type="Texture2D" uid="uid://c6ixkj6jkl8vv" path="res://Assets/Sprites/NaveDerecha.png" id="4_x1a6r"]
+[ext_resource type="Texture2D" uid="uid://bg1prmdice83v" path="res://Assets/Sprites/NaveIzquierda.png" id="5_oua2g"]
+[ext_resource type="Texture2D" uid="uid://bujyep3anpkow" path="res://Assets/Sprites/MuerteNave.png" id="6_mb44e"]
+[ext_resource type="Texture2D" uid="uid://dmspjmchadao7" path="res://Assets/Sprites/DesapariciónNave.png" id="7_aknpy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y110i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6vc6x")
+}],
+"loop": true,
+"name": &"Adelante",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3cdix")
+}],
+"loop": false,
+"name": &"Daño",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x1a6r")
+}],
+"loop": true,
+"name": &"Derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_oua2g")
+}],
+"loop": true,
+"name": &"Izquierda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("6_mb44e")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_aknpy")
+}],
+"loop": false,
+"name": &"Muerte",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a5o0"]
+size = Vector2(224, 185)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_by3p8"]
+size = Vector2(135, 83)
+
+[node name="Jugador" type="CharacterBody2D" unique_id=37968783]
+position = Vector2(958, 927)
+collision_mask = 8
+script = ExtResource("1_5nsjc")
+
+[node name="AnimaciónJugador" type="AnimatedSprite2D" parent="." unique_id=63043992]
+rotation = -1.5707964
+scale = Vector2(2.7348301, 3.6241887)
+sprite_frames = SubResource("SpriteFrames_y110i")
+animation = &"Daño"
+
+[node name="Centro" type="Marker2D" parent="AnimaciónJugador" unique_id=1354067461]
+unique_name_in_owner = true
+position = Vector2(46.437984, 0.8277302)
+
+[node name="Izquierda" type="Marker2D" parent="AnimaciónJugador" unique_id=420133714]
+unique_name_in_owner = true
+position = Vector2(-12.06636, -28.171967)
+
+[node name="Derecha" type="Marker2D" parent="AnimaciónJugador" unique_id=234291763]
+unique_name_in_owner = true
+position = Vector2(-12.066, 28.172)
+
+[node name="FormaJugador" type="CollisionShape2D" parent="." unique_id=909250622]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_5a5o0")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=55289557]
+collision_mask = 8
+
+[node name="Hitbox" type="CollisionShape2D" parent="Hitbox" unique_id=1112848080]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_by3p8")

@@ -15,10 +15,10 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("3_n074k")
 }],
-"loop": true,
+"loop": false,
 "name": &"Roto",
 "speed": 5.0
 }]
@@ -28,6 +28,8 @@ radius = 34.058773
 
 [node name="Meteorito" type="Area2D" unique_id=1096180996]
 position = Vector2(175, 0)
+collision_layer = 8
+collision_mask = 5
 script = ExtResource("1_7thuf")
 
 [node name="AnimacionMeteorito" type="AnimatedSprite2D" parent="." unique_id=2047874347]
@@ -37,3 +39,6 @@ animation = &"Roto"
 
 [node name="FormaMeteorito" type="CollisionShape2D" parent="." unique_id=1756769863]
 shape = SubResource("CircleShape2D_qklm2")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

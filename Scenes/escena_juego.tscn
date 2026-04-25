@@ -1,155 +1,19 @@
 [gd_scene format=3 uid="uid://dlx5qljqbkbhn"]
 
-[ext_resource type="Texture2D" uid="uid://cy6yhd634fdgi" path="res://Assets/Backgrounds/planetaGrande.png" id="1_r6cd3"]
-[ext_resource type="Texture2D" uid="uid://c223uyw6syehi" path="res://Assets/Backgrounds/espacioExterior.png" id="2_l25gb"]
-[ext_resource type="Texture2D" uid="uid://u237apbdspi7" path="res://Assets/Backgrounds/anillo.png" id="2_xv6uw"]
-[ext_resource type="Texture2D" uid="uid://cg2tmljx0xwgw" path="res://Assets/Backgrounds/planetasLejanos.png" id="5_bpiil"]
-[ext_resource type="Texture2D" uid="uid://dln0dmadcqjgi" path="res://Assets/Backgrounds/estrellas.png" id="6_0ts43"]
-[ext_resource type="Texture2D" uid="uid://ddd8850sxv2qk" path="res://Assets/Sprites/NaveAdelante.png" id="6_5a5o0"]
-[ext_resource type="Script" uid="uid://dw3f005b4gowk" path="res://Scenes/jugador.gd" id="6_ewo5w"]
-[ext_resource type="Texture2D" uid="uid://bg1prmdice83v" path="res://Assets/Sprites/NaveIzquierda.png" id="7_by3p8"]
-[ext_resource type="Texture2D" uid="uid://c6ixkj6jkl8vv" path="res://Assets/Sprites/NaveDerecha.png" id="8_ewo5w"]
-[ext_resource type="Texture2D" uid="uid://b24sxlcxsy5jx" path="res://Assets/Sprites/DañoEnLaNave.png" id="9_dwp16"]
-[ext_resource type="Texture2D" uid="uid://bujyep3anpkow" path="res://Assets/Sprites/MuerteNave.png" id="10_k4n53"]
-[ext_resource type="Texture2D" uid="uid://dmspjmchadao7" path="res://Assets/Sprites/DesapariciónNave.png" id="11_yg5m4"]
-[ext_resource type="PackedScene" uid="uid://lcrrs4pu5vsw" path="res://Scenes/barra_vida.tscn" id="13_ewo5w"]
-[ext_resource type="PackedScene" uid="uid://c1jb8cevyngkp" path="res://Scenes/cometa.tscn" id="14_yg5m4"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_y110i"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_5a5o0")
-}],
-"loop": true,
-"name": &"Adelante",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_dwp16")
-}],
-"loop": true,
-"name": &"Daño",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_ewo5w")
-}],
-"loop": true,
-"name": &"Derecha",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_by3p8")
-}],
-"loop": true,
-"name": &"Izquierda",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_k4n53")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_yg5m4")
-}],
-"loop": true,
-"name": &"Muerte",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a5o0"]
-size = Vector2(224, 185)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_by3p8"]
-size = Vector2(135, 83)
+[ext_resource type="PackedScene" uid="uid://s6fqtlqx76ie" path="res://Scenes/fondo.tscn" id="1_vqevi"]
+[ext_resource type="PackedScene" uid="uid://dy2u8q4fnai0a" path="res://Scenes/jugador.tscn" id="2_45664"]
+[ext_resource type="PackedScene" path="res://Scenes/barra_vida.tscn" id="13_ewo5w"]
+[ext_resource type="PackedScene" uid="uid://cpm7rwacg77xd" path="res://Scenes/cometa.tscn" id="14_yg5m4"]
 
 [node name="EscenaJuego" type="Node2D" unique_id=1873321606]
 
-[node name="Fondo" type="Node2D" parent="." unique_id=707536318]
+[node name="Fondo" parent="." unique_id=1505269613 instance=ExtResource("1_vqevi")]
 
-[node name="CapaLejana" type="Parallax2D" parent="Fondo" unique_id=1761755608]
-repeat_size = Vector2(0, 1080)
-
-[node name="EspacioExterior" type="Sprite2D" parent="Fondo/CapaLejana" unique_id=1488071625]
-position = Vector2(958, 541.50006)
-scale = Vector2(7.0661764, 6.7812505)
-texture = ExtResource("2_l25gb")
-
-[node name="CapaMediana" type="Parallax2D" parent="Fondo" unique_id=1086816981]
-repeat_size = Vector2(0, 1080)
-autoscroll = Vector2(0, 80)
-
-[node name="PlanetaGrande" type="Sprite2D" parent="Fondo/CapaMediana" unique_id=1363419215]
-position = Vector2(1362, 608)
-scale = Vector2(2.8863637, 2.729885)
-texture = ExtResource("1_r6cd3")
-
-[node name="Saturno" type="Sprite2D" parent="Fondo/CapaMediana" unique_id=1144630978]
-position = Vector2(633.625, 469.87503)
-scale = Vector2(3.5441177, 1.4804348)
-texture = ExtResource("2_xv6uw")
-
-[node name="PlanetasX" type="Sprite2D" parent="Fondo/CapaMediana" unique_id=1916443717]
-position = Vector2(702.99994, 235)
-scale = Vector2(1.867647, 1.70625)
-texture = ExtResource("5_bpiil")
-
-[node name="CapaCercana" type="Parallax2D" parent="Fondo" unique_id=223147912]
-repeat_size = Vector2(0, 1080)
-autoscroll = Vector2(0, 600)
-
-[node name="Estrellas" type="Sprite2D" parent="Fondo/CapaCercana" unique_id=4725531]
-position = Vector2(607.50006, 424)
-scale = Vector2(3.6727946, 4.325)
-texture = ExtResource("6_0ts43")
-
-[node name="Estrellas2" type="Sprite2D" parent="Fondo/CapaCercana" unique_id=1421003314]
-position = Vector2(1432.75, 413.25)
-scale = Vector2(2.6930156, 4.0906253)
-texture = ExtResource("6_0ts43")
-
-[node name="Estrellas3" type="Sprite2D" parent="Fondo/CapaCercana" unique_id=490982343]
-position = Vector2(1127, 639.5)
-scale = Vector2(4.5441175, 3.8562503)
-texture = ExtResource("6_0ts43")
-
-[node name="Jugador" type="CharacterBody2D" parent="." unique_id=1498384069]
-position = Vector2(958, 927)
-script = ExtResource("6_ewo5w")
-
-[node name="AnimaciónJugador" type="AnimatedSprite2D" parent="Jugador" unique_id=309199361]
-rotation = -1.5707964
-scale = Vector2(2.7348301, 3.6241887)
-sprite_frames = SubResource("SpriteFrames_y110i")
-animation = &"Adelante"
-
-[node name="Centro" type="Marker2D" parent="Jugador/AnimaciónJugador" unique_id=1663901035]
-unique_name_in_owner = true
-position = Vector2(46.437984, 0.8277302)
-
-[node name="Izquierda" type="Marker2D" parent="Jugador/AnimaciónJugador" unique_id=165839691]
-unique_name_in_owner = true
-position = Vector2(-12.06636, -28.171967)
-
-[node name="Derecha" type="Marker2D" parent="Jugador/AnimaciónJugador" unique_id=1462606630]
-unique_name_in_owner = true
-position = Vector2(-12.066, 28.172)
-
-[node name="FormaJugador" type="CollisionShape2D" parent="Jugador" unique_id=1680116633]
-position = Vector2(0, -15)
-shape = SubResource("RectangleShape2D_5a5o0")
-
-[node name="Hitbox" type="Area2D" parent="Jugador" unique_id=903936744]
-
-[node name="Hitbox" type="CollisionShape2D" parent="Jugador/Hitbox" unique_id=1046394906]
-position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_by3p8")
+[node name="Jugador" parent="." unique_id=37968783 instance=ExtResource("2_45664")]
 
 [node name="Cometa" parent="." unique_id=1746243944 instance=ExtResource("14_yg5m4")]
+collision_layer = 2
+collision_mask = 4
 
 [node name="BarraVida" parent="." unique_id=917212491 instance=ExtResource("13_ewo5w")]
 offset_left = 1226.0
@@ -157,3 +21,5 @@ offset_top = 15.0
 offset_right = 1907.0
 offset_bottom = 240.0
 theme_override_constants/separation = 3
+
+[connection signal="vidaPerdida" from="Jugador" to="BarraVida" method="_on_jugador_vida_perdida"]

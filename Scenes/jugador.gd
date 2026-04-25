@@ -1,6 +1,7 @@
 extends CharacterBody2D
 const velocidad = 400
 var vidas=3
+var invencible=false
 var meteoritos_destruidos=0
 signal vidaPerdida
 const Bala= preload("res://Scenes/bala.tscn")
@@ -37,9 +38,20 @@ func _input(event: InputEvent) -> void:
 		bala.direccionX= direccion
 		get_parent().add_child(bala)		
 func recibir_danio():
+	if vidas <= 0:
+		return
+	if invencible:
+		return
+	invencible= true
 	vidas-=1
 	vidaPerdida.emit()
-	if(vidas<=0):
+	set_physics_process(false)
+	animacion.play("Daño")
+	await get_tree().create_timer(0.5).timeout
+	set_physics_process(true)
+	invencible =false
+	if vidas <= 0:
+		set_physics_process(false)
 		animacion.play("Muerte")
+		await animacion.animation_finished
 		queue_free()
-				
