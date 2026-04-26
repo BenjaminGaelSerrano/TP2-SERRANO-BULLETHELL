@@ -1,5 +1,6 @@
 extends CharacterBody2D
 const velocidad = 500
+signal cometaMuerto
 const meteoritoo = preload("res://Scenes/meteorito.tscn")
 @onready var jugador = $"../Jugador"
 var vidas=50
@@ -45,7 +46,7 @@ func recibir_danio():
 		animacion.play("Destruccion")
 		await animacion.animation_finished
 		queue_free()
-		return
+		cometaMuerto.emit()
 	await get_tree().create_timer(0.5).timeout
 	invencible = false
 func disparar():

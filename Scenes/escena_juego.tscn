@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://dlx5qljqbkbhn"]
 
+[ext_resource type="PackedScene" uid="uid://dtqt3cwcqfrkt" path="res://Scenes/pantalla_inicio.tscn" id="1_45664"]
 [ext_resource type="PackedScene" uid="uid://s6fqtlqx76ie" path="res://Scenes/fondo.tscn" id="1_vqevi"]
 [ext_resource type="PackedScene" uid="uid://dy2u8q4fnai0a" path="res://Scenes/jugador.tscn" id="2_45664"]
-[ext_resource type="PackedScene" path="res://Scenes/barra_vida.tscn" id="13_ewo5w"]
+[ext_resource type="PackedScene" uid="uid://lcrrs4pu5vsw" path="res://Scenes/barra_vida.tscn" id="13_ewo5w"]
 [ext_resource type="PackedScene" uid="uid://cpm7rwacg77xd" path="res://Scenes/cometa.tscn" id="14_yg5m4"]
 
 [node name="EscenaJuego" type="Node2D" unique_id=1873321606]
+
+[node name="PantallaInicio" parent="." unique_id=237700768 instance=ExtResource("1_45664")]
 
 [node name="Fondo" parent="." unique_id=1505269613 instance=ExtResource("1_vqevi")]
 
@@ -22,4 +25,6 @@ offset_right = 1907.0
 offset_bottom = 240.0
 theme_override_constants/separation = 3
 
+[connection signal="jugadorMuerto" from="Jugador" to="PantallaInicio" method="perdiste"]
 [connection signal="vidaPerdida" from="Jugador" to="BarraVida" method="_on_jugador_vida_perdida"]
+[connection signal="cometaMuerto" from="Cometa" to="PantallaInicio" method="ganaste"]

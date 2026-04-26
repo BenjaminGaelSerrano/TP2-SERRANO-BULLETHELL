@@ -1,6 +1,7 @@
 extends CharacterBody2D
 const velocidad = 400
 var vidas=3
+signal jugadorMuerto
 var invencible=false
 var meteoritos_destruidos=0
 signal vidaPerdida
@@ -55,3 +56,4 @@ func recibir_danio():
 		animacion.play("Muerte")
 		await animacion.animation_finished
 		queue_free()
+		jugadorMuerto.emit()

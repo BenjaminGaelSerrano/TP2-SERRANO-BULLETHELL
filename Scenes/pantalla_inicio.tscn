@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dtqt3cwcqfrkt"]
+
+[ext_resource type="Script" uid="uid://c3jhy88kn5b5g" path="res://pantalla_inicio.gd" id="1_vex1r"]
+[ext_resource type="Texture2D" uid="uid://w8xy2cl72n8p" path="res://Assets/Backgrounds/fondoInicio.png" id="2_4x7pe"]
+[ext_resource type="FontFile" uid="uid://cxaimvpvhb8kv" path="res://Assets/Fonts/FuenteInicio.ttf" id="3_4x7pe"]
+
+[node name="PantallaInicio" type="CanvasLayer" unique_id=237700768]
+script = ExtResource("1_vex1r")
+
+[node name="Control" type="Control" parent="." unique_id=697742008]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondo" type="TextureRect" parent="Control" unique_id=1030175748]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_4x7pe")
+
+[node name="Mensaje" type="Label" parent="Control" unique_id=489080815]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 292.0
+offset_right = 1500.0
+offset_bottom = 582.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_4x7pe")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Boton" type="Button" parent="Control" unique_id=764150477]
+process_mode = 3
+layout_mode = 0
+offset_left = 635.0
+offset_top = 708.0
+offset_right = 1345.0
+offset_bottom = 863.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_4x7pe")
+theme_override_font_sizes/font_size = 70
+
+[connection signal="pressed" from="Control/Boton" to="." method="botonApretado"]
