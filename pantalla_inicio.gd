@@ -21,7 +21,7 @@ func ganaste():
 	boton.text = "Nueva partida"
 	inicio.visible = true		
 func botonApretado():
-	if boton.text=="Iniciar Partida":
+	if boton.text=="Iniciar Partida" or boton.text=="Reanudar":
 		get_tree().paused = false
 		inicio.visible=false
 	else :
