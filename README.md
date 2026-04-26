@@ -8,6 +8,6 @@ Mové tu nave, destruí meteoritos y matá al cometa antes de que se escape.
 - **Escape** para pausar
 
 ## Cómo funciona
-Destruís 50 meteoritos y aparece el Gran Cometa. Tenés 10 segundos para bajarle las 50 vidas antes de que desaparezca. Si perdés las 3 vidas, game over.
+Destruís 50 meteoritos y aparece el Gran Cometa. Tenés 10 segundos para bajarle las 50 vidas antes de que desaparezca y tengas que destruir 50 meteoritos para que aparezca de vuelta. Si perdés las 3 vidas, game over.
 
 ## Espero que te diviertas jugandolo profe
