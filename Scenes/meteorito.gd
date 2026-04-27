@@ -2,7 +2,7 @@ extends Area2D
 var direccion= Vector2(0.3,1.0)
 var anchoPantalla
 var duracion=20
-const velocidad= 500
+const velocidad= 750
 @onready var animacion= $AnimacionMeteorito
 @onready var jugador =$Jugador
 @onready var cometa= $Cometa
@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 func destruir():
 	animacion.play("Roto")
 	jugador.meteoritos_destruidos+=1
-	if jugador.meteoritos_destruidos>= 50:
+	if jugador.meteoritos_destruidos>= 25:
 		cometa.aparecer() 
 		jugador.meteoritos_destruidos=0
 	set_physics_process(false)

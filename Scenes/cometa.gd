@@ -3,7 +3,7 @@ const velocidad = 500
 signal cometaMuerto
 const meteoritoo = preload("res://Scenes/meteorito.tscn")
 @onready var jugador = $"../Jugador"
-var vidas=50
+var vidas=75
 var invencible=false
 var aparecido=false
 @onready var timer= $TimerDisparo
@@ -34,6 +34,7 @@ func _physics_process(delta):
 		direccion = -direccion	
 func aparecer():
 	aparecido= true
+	tiempo=0
 	position= Vector2(anchoPantalla / 2, 100)
 	direccion=1			
 	timer.start()
@@ -45,8 +46,9 @@ func recibir_danio():
 	if vidas <= 0:
 		animacion.play("Destruccion")
 		await animacion.animation_finished
-		queue_free()
 		cometaMuerto.emit()
+		queue_free()
+		return
 	await get_tree().create_timer(0.5).timeout
 	invencible = false
 func disparar():
